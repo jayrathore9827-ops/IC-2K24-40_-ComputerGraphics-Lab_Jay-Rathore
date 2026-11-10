@@ -4,7 +4,7 @@
  *           the Digital Differential Analyzer (DDA) Line Drawing Algorithm to
  *           draw a straight line between two given points.
  *
- * SUBMITTED BY : AISHWARYA KUMAR SINGH
+ * SUBMITTED BY : JAY RATHORE
  * Roll No      : IC-2K24-40
  */
 
