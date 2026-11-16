@@ -10,64 +10,33 @@
 
 #include <graphics.h>
 #include <conio.h>
-#include <stdio.h>
-#include <stdlib.h>
-#include <math.h>
-
-int roundOff(float v)
-{
-    return (int)floor(v + 0.5f);
-}
-
-void ddaLine(int x1, int y1, int x2, int y2, int color)
-{
-    int dx = x2 - x1;
-    int dy = y2 - y1;
-    int steps = 0;
-
-    /* steps = max(|dx|, |dy|) */
-    if (abs(dx) > abs(dy))
-    {
-        steps = abs(dx);
-    }
-    else
-    {
-        steps = abs(dy);
-    }
-
-    
-    float xInc = (float)dx / steps;
-    float yInc = (float)dy / steps;
-
-    float x = (float)x1;
-    float y = (float)y1;
-
-    for (int i = 0; i <= steps; i++)
-    {
-        putpixel(roundOff(x), roundOff(y), color);
-        x += xInc;
-        y += yInc;
-    }
-}
 
 int main()
 {
-    /* Hardcoded input points */
-    int x1 = 60,  y1 = 150;
-    int x2 = 580, y2 = 400;
-
     int gd = DETECT, gm;
-    initgraph(&gd, &gm, (char*)"");
 
-    /* Name */
-    setcolor(WHITE);
-    outtextxy(140, 30, (char*)"Name: Jay Rathore  |  Roll No: IC-2K24-40");
+    char path[] = "";
+    initgraph(&gd, &gm, path);
 
-    /* DDA line */
-    ddaLine(x1, y1, x2, y2, WHITE);
+    // 1. Straight Line
+    line(100, 100, 300, 100);
 
+    // 2. Circle
+    circle(200, 220, 70);
+
+    // 3. Rectangle
+    rectangle(400, 250, 400, 250);
+
+    // 4. Triangle
+    line(400, 400, 500, 280);
+    line(500, 280, 600, 400);
+    line(600, 400, 400, 400);
+
+    // Wait for a key press
     getch();
+
+    // Close graphics mode
     closegraph();
 
     return 0;
-}
+} 
