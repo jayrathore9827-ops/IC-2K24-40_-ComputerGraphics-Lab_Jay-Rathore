@@ -25,7 +25,7 @@ int main()
     circle(200, 220, 70);
 
     // 3. Rectangle
-    rectangle(400, 250, 400, 250);
+    rectangle(400, 120, 600, 250);
 
     // 4. Triangle
     line(400, 400, 500, 280);
